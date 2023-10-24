@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from random import choice
 
+
 class HashTable:
     def __init__(self, hash_function, size):
         self.size = size
@@ -75,3 +76,4 @@ HT.insert(x)
 
 print(HT.find(x))  # True
 print(HT.find(y))  # False
+
