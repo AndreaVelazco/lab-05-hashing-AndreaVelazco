@@ -32,7 +32,7 @@ void insert(HashTable* ht, int x) {
     int index = ht->hash_function(x) % ht->size;
 
     while (ht->table[index] != -1) {
-        index = (index + 1) % ht->size;  // Linear probing to find an empty slot
+        index = (index + 1) % ht->size; 
     }
 
     ht->table[index] = x;
