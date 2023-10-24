@@ -28,6 +28,8 @@ class HashTable:
             return True
         return False
  
+def mi_Mod(x, n=10):
+    return x % n
 
 def RandomHashFun(M, n=10):
         fnTable = [ None for i in range(M) ]
