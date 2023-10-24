@@ -37,3 +37,17 @@ void insert(HashTable* ht, int x) {
 
     ht->table[index] = x;
 }
+
+bool find(HashTable* ht, int x) {
+    int index = ht->hash_function(x) % ht->size;
+
+    while (ht->table[index] != -1) {
+        if (ht->table[index] == x) {
+            return true;
+        }
+
+        index = (index + 1) % ht->size; 
+    }
+
+    return false;
+}
