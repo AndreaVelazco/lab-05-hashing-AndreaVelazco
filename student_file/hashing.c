@@ -9,3 +9,11 @@ typedef struct HashTable {
     int* table;
     int (*hash_function)(int);
 } HashTable;
+
+int mi_Mod(int x, int n) {
+    return x % n;
+}
+
+int randomFn(int x, int n) {
+    return rand() % n;
+}
