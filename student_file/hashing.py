@@ -31,6 +31,9 @@ class HashTable:
 def mi_Mod(x, n=10):
     return x % n
 
+def randomFn(x, n=10):
+    return choice(range(n))
+
 def RandomHashFun(M, n=10):
         fnTable = [ None for i in range(M) ]
         for x in range(M):
