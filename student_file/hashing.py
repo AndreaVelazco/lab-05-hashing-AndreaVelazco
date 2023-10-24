@@ -5,14 +5,31 @@ from random import choice
 
 
 class HashTable:
-  ## code
-  ## code
-  ## def insert(self, x)
-  ## def delete(self, x)
-  ## def find(self, x)
+    def __init__(self, hash_function, size):
+        self.size = size
+        self.table = [None] * size
+        self.hash_function = hash_function
+
+    def insert(self, x):
+        index = self.hash_function(x) % self.size
+        if self.table[index] is None:
+            self.table[index] = [x]
+        else:
+            self.table[index].append(x)
+
+    def delete(self, x):
+        index = self.hash_function(x) % self.size
+        if self.table[index] is not None and x in self.table[index]:
+            self.table[index].remove(x)
+
+    def find(self, x):
+        index = self.hash_function(x) % self.size
+        if self.table[index] is not None and x in self.table[index]:
+            return True
+        return False
  
 
-    def RandomHashFun(M, n=10):
+def RandomHashFun(M, n=10):
         fnTable = [ None for i in range(M) ]
         for x in range(M):
             fnTable[x] = choice(range(n))
