@@ -52,4 +52,23 @@ bool find(HashTable* ht, int x) {
     return false;
 }
 
+int main() {
+    srand(time(NULL));  
+    HashTable ht;
+    initHashTable(&ht, mi_Mod);
+
+    int x = 1234567;
+    int y = 76554334234;
+
+    insert(&ht, x);
+
+    printf("Find x: %d\n", find(&ht, x));  
+    printf("Find y: %d\n", find(&ht, y)); 
+
+    delete(&ht, x);
+
+    printf("Find x after delete: %d\n", find(&ht, x));  
+    return 0;
+}
+
 
