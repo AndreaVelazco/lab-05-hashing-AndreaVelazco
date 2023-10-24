@@ -27,3 +27,13 @@ void initHashTable(HashTable* ht, int (*hash_function)(int)) {
         ht->table[i] = -1;  
     }
 }
+
+void insert(HashTable* ht, int x) {
+    int index = ht->hash_function(x) % ht->size;
+
+    while (ht->table[index] != -1) {
+        index = (index + 1) % ht->size;  // Linear probing to find an empty slot
+    }
+
+    ht->table[index] = x;
+}
